@@ -807,6 +807,7 @@
     flex-shrink: 0;
   }
 
+
   .author-info strong { display: block; font-size: 0.9rem; font-weight: 500; color: var(--text); }
   .author-info span { font-size: 0.78rem; color: var(--text-muted); }
 
@@ -1038,6 +1039,23 @@
     section { padding: 70px 5%; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .about-highlights { grid-template-columns: 1fr 1fr; }
+
+    /* Hero spacing on mobile */
+    .hero {
+      padding: 80px 5% 40px;
+    }
+
+    .hero-badge {
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-sub {
+      margin-bottom: 3rem;
+    }
+
+    .hero-image {
+      margin-top: 2.5rem;
+    }
   }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1405,7 +1423,7 @@
       <label for="message">Message</label>
       <textarea id="message" placeholder="Décrivez votre projet, vos objectifs, vos besoins..."></textarea>
     </div>
-    <button class="btn-primary" id="sendBtn" onclick="handleSend()">Envoyer un message →</button>
+    <button class="btn-primary space" id="sendBtn" onclick="handleSend()">Envoyer un message →</button>
   </div>
 </section>
 
