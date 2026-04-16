@@ -637,8 +637,92 @@
     transition: width 1.2s ease;
   }
 
+  /* ─── FEATURED PROJECT ─── */
+  .featured-project {
+    background: linear-gradient(135deg, var(--bg) 0%, var(--white) 100%);
+    padding: 120px 5%;
+  }
+
+  .featured-header {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .featured-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 1rem;
+  }
+
+  .featured-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-title em {
+    color: var(--coral);
+    font-style: italic;
+  }
+
+  .featured-description {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .featured-description strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .featured-item {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: var(--bg2);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+  }
+
+  .featured-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(255,90,95,0.2);
+  }
+
+  .featured-item-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .featured-item:hover .featured-item-bg {
+    transform: scale(1.08);
+  }
+
   /* ─── PORTFOLIO ─── */
-  .portfolio { background: var(--white); }
+  .portfolio { background: var(--white); display: none; }
 
   .portfolio-header {
     text-align: center;
@@ -698,10 +782,9 @@
   .portfolio-item-bg {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: transform 0.4s ease;
+    object-fit: cover;
+    display: block;
   }
 
   .portfolio-item:hover .portfolio-item-bg {
@@ -749,6 +832,8 @@
   .pi-4 { background: linear-gradient(135deg, #FFE8D4, #FFDDB3); }
   .pi-5 { background: linear-gradient(135deg, #E8D4FF, #D4B3FF); }
   .pi-6 { background: linear-gradient(135deg, #D4FFFE, #B3EFEE); }
+  .pi-7 { background: linear-gradient(135deg, #FFD4B3, #FFC299); }
+  .pi-8 { background: linear-gradient(135deg, #D4FFE8, #B3E8D4); }
 
   /* ─── TESTIMONIALS ─── */
   .testimonials { background: var(--bg); }
@@ -1023,6 +1108,8 @@
 
     .services-header { flex-direction: column; }
 
+    .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     .portfolio-item.large { grid-column: span 1; }
 
@@ -1038,6 +1125,7 @@
 
   @media (max-width: 600px) {
     section { padding: 70px 5%; }
+    .featured-grid { grid-template-columns: 1fr; gap: 1rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .about-highlights { grid-template-columns: 1fr 1fr; }
 
@@ -1070,7 +1158,7 @@
     <li><a href="#hero">Accueil</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#featured">Projet Phare</a></li>
     <li><a href="#testimonials">Témoignages</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -1083,7 +1171,7 @@
   <a href="#hero">Accueil</a>
   <a href="#about">À propos</a>
   <a href="#services">Services</a>
-  <a href="#portfolio">Portfolio</a>
+  <a href="#featured">Projet Phare</a>
   <a href="#testimonials">Témoignages</a>
   <a href="#contact">Contact</a>
 </div>
@@ -1243,6 +1331,44 @@
   </div>
 </section>
 
+<!-- FEATURED PROJECT -->
+<section class="featured-project" id="featured">
+  <div class="featured-header reveal">
+    <div class="featured-subtitle">🇧🇯 Projet Phare</div>
+    <h2 class="featured-title">Mettre en valeur la culture <em>béninoise</em></h2>
+    <p class="featured-description">
+      Une collection de designs vibrants et authentiques célébrant l'héritage, les traditions et la beauté du Bénin. 
+      À travers <strong>8 créations visuelles</strong>, découvrez comment transformer la culture en art numérique empreint d'émotion et d'identité.
+    </p>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-item reveal">
+      <img src="1.jpg" alt="Culture béninoise - Création 1" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-1">
+      <img src="2.jpg" alt="Culture béninoise - Création 2" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-2">
+      <img src="3.jpg" alt="Culture béninoise - Création 3" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-3">
+      <img src="4.jpg" alt="Culture béninoise - Création 4" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal">
+      <img src="5.jpg" alt="Culture béninoise - Création 5" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-1">
+      <img src="6.jpg" alt="Culture béninoise - Création 6" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-2">
+      <img src="7.jpg" alt="Culture béninoise - Création 7" class="featured-item-bg">
+    </div>
+    <div class="featured-item reveal reveal-delay-3">
+      <img src="8.jpg" alt="Culture béninoise - Création 8" class="featured-item-bg">
+    </div>
+  </div>
+</section>
+
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="portfolio-header">
@@ -1257,46 +1383,60 @@
     </div>
   </div>
   <div class="portfolio-grid">
-    <div class="portfolio-item large reveal" data-cat="design">
-      <div class="portfolio-item-bg pi-1"></div>
+    <div class="portfolio-item reveal" data-cat="design">
+      <img src="1.jpg" alt="Portfolio - Projet 1" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Identité Visuelle Bloom</h4>
-        <span>Design Graphique</span>
+        <h4>Projet 1</h4>
+        <span>Design</span>
       </div>
     </div>
     <div class="portfolio-item reveal reveal-delay-1" data-cat="social">
-      <div class="portfolio-item-bg pi-2"></div>
+      <img src="2.jpg" alt="Portfolio - Projet 2" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Stratégie Réseau Social</h4>
+        <h4>Projet 2</h4>
         <span>Social Media</span>
       </div>
     </div>
     <div class="portfolio-item reveal reveal-delay-2" data-cat="content">
-      <div class="portfolio-item-bg pi-3"></div>
+      <img src="3.jpg" alt="Portfolio - Projet 3" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Campagne Contenu Mode</h4>
-        <span>Création de contenu</span>
+        <h4>Projet 3</h4>
+        <span>Contenu</span>
       </div>
     </div>
     <div class="portfolio-item reveal reveal-delay-3" data-cat="design">
-      <div class="portfolio-item-bg pi-4"></div>
+      <img src="4.jpg" alt="Portfolio - Projet 4" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Branding Restaurant</h4>
-        <span>Design Graphique</span>
+        <h4>Projet 4</h4>
+        <span>Design</span>
       </div>
     </div>
-    <div class="portfolio-item large reveal" data-cat="social">
-      <div class="portfolio-item-bg pi-5"></div>
+    <div class="portfolio-item reveal" data-cat="social">
+      <img src="5.jpg" alt="Portfolio - Projet 5" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Growth Instagram Boutique</h4>
+        <h4>Projet 5</h4>
         <span>Social Media</span>
       </div>
     </div>
     <div class="portfolio-item reveal reveal-delay-1" data-cat="content">
-      <div class="portfolio-item-bg pi-6"></div>
+      <img src="6.jpg" alt="Portfolio - Projet 6" class="portfolio-item-bg">
       <div class="portfolio-overlay">
-        <h4>Vidéos Reels Beauté</h4>
-        <span>Création de contenu</span>
+        <h4>Projet 6</h4>
+        <span>Contenu</span>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-2" data-cat="design">
+      <img src="7.jpg" alt="Portfolio - Projet 7" class="portfolio-item-bg">
+      <div class="portfolio-overlay">
+        <h4>Projet 7</h4>
+        <span>Design</span>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-3" data-cat="social">
+      <img src="8.jpg" alt="Portfolio - Projet 8" class="portfolio-item-bg">
+      <div class="portfolio-overlay">
+        <h4>Projet 8</h4>
+        <span>Social Media</span>
       </div>
     </div>
   </div>
